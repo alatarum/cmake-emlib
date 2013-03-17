@@ -3,13 +3,12 @@ About
 
 This project is used to develop applications for efm32 and efr4d - EnergyMicro's ARM Cortex-M MCUs, using cmake, GCC, newlib (libc) and EnergyMicro CMSIS Library. For now it support only EFM32G, EFM32TG, EFM32LG and EFM32GG, but it is easy to add other families in the future.
 
-Requirements:
--------------
+##Requirements:
 * cmake >= 2.8 (not test on 2.6 but may be it works too)
 * GCC toolchain with newlib.
 * emlib Peripherals Library
-Project contains:
------------------
+
+##Project contains:
 * CMake toolchain file, that configures cmake to use ARM toolchain.
 * CMake projects that builds emlib into static libraries.
 * CMake modules to find and configure emlib.
@@ -22,10 +21,12 @@ First of all you need to configure toolchain and libraries, you can do this by e
 Variables for toolchain:
 * TOOLCHAIN_PREFIX - where toolchain is located, **default**: */usr*
 * TARGET_TRIPLET - toolchain target triplet, **default**: *arm-none-eabi*
+
 Additionaly you need to configure emlib:
 * EMLIB_DIR - path to EnergyMicro Library (where emlib, CMSIS and Device directories are) **default**: */opt/energymicro*
 * TARGET_MCU - EFM32 chip, subfamily or family to build library for (can be specified several values as ';'-separated list) **default**: *"EFM32G;EFM32TG;EFM32LG;EFM32GG"*
 * USE_ASSERT - Use internal asserts in emlib (*not implemented yet*)
+
 And some CMake internal variables:
 * CMAKE_INSTALL_PREFIX - path where compiled libraries, headers and other files would be installed
 * CMAKE_BUILD_TYPE - Build Release or Debug version of libraries
@@ -54,24 +55,20 @@ Then you need to adjust some variables in CMakeLists.txt:
 Build
 =====
 
-Generate Makefile
------------------
+##Generate Makefile
 `cmake -DEM_MCU=<chip_name> -DCMAKE_TOOLCHAIN_FILE=<path_to_gcc_cortex_m.cmake> -DCMAKE_BUILD_TYPE=Debug <path_to_source_dir>`
 Where <chip_name> full name of part you are using (for example EFM32G232F128). To build in relise mode use -DCMAKE_BUILD_TYPE=Relise
 
-Build
------
+##Build
 `make`
 The result is a .elf and .bin files by default. You can edit your projects CMakeLists.txt to generate files that you need.
 If you want to see full commands used in build process use
 `make VERBOSE=1`
 
-For using with Code::Blocks
----------------------------
+##For using with Code::Blocks
 `cmake -DEM_MCU=<chip_name> -DCMAKE_TOOLCHAIN_FILE=<path_to_gcc_cortex_m.cmake> -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" <path_to_source_dir>`
 
-For using with Eclipse CDT
---------------------------
+##For using with Eclipse CDT
 `cmake -DEM_MCU=<chip_name> -DCMAKE_TOOLCHAIN_FILE=<path_to_gcc_cortex_m.cmake> -DCMAKE_BUILD_TYPE=Debug -G "Eclipse CDT4 - Unix Makefiles" <path_to_source_dir>`
 
 TODO
