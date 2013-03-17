@@ -22,8 +22,8 @@ ENTRY(__cs3_reset)
 
 MEMORY
 {
-  FLASH (rx) : ORIGIN = ${FLASH_ORIGIN}, LENGTH = ${FLASH_SIZE}
-  RAM (rwx)  : ORIGIN = ${RAM_ORIGIN}, LENGTH = ${RAM_SIZE}
+  rom (rx) : ORIGIN = ${FLASH_ORIGIN}, LENGTH = ${FLASH_SIZE}
+  ram (rwx)  : ORIGIN = ${RAM_ORIGIN}, LENGTH = ${RAM_SIZE}
 }
 
 /* These force the linker to search for particular symbols from
