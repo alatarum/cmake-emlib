@@ -3,7 +3,7 @@ PROJECT(efm32-template)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 ENABLE_LANGUAGE(ASM)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
-	"/home/alatar/_DATA_/_OPENSOURCE_/cmake_emlib/cmake/Modules/")
+	"../cmake/Modules/")
 
 FIND_PACKAGE(EmLib REQUIRED)
 

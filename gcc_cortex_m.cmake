@@ -1,6 +1,6 @@
 # GCC toolchain prefix
 IF(NOT TOOLCHAIN_PREFIX)
-    SET(TOOLCHAIN_PREFIX "/home/alatar/ARM/arm-2012.09")
+    SET(TOOLCHAIN_PREFIX "/usr")
     MESSAGE(STATUS "No TOOLCHAIN_PREFIX specified, using default: " ${TOOLCHAIN_PREFIX})
 ENDIF()
 IF(NOT TARGET_TRIPLET)
